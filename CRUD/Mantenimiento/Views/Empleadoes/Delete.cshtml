@@ -1,0 +1,42 @@
+﻿@model Mantenimiento.Empleado
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>  <i class="fa-sharp fa-solid fa-trash"></i> Borrar</h2>
+
+<h3>Esta seguro que quiere eliminar este?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        
+        <input type="submit"  value="Borrar"  class="btn btn-default" /> |
+        @Html.ActionLink("Volver", "Index")
+    </div>
+    }
+</div>
